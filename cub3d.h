@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/18 17:48:09 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/18 18:14:35 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,11 @@ int		get_next_line(int fd, char **line);
 
 // LIBFT
 void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 char	**ft_split(char const *s, char c);
 int		ft_strncmp(const char *s1, const char *s2, unsigned int n);
+int		ft_atoi(const char *str);
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
+char	*ft_strdup(const char *s);
 
 #endif
