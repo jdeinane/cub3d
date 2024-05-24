@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 22:10:54 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 22:20:30 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,6 +151,7 @@ void	error_exit(t_cub3d *game, const char *msg);
 int		handle_exit(t_cub3d *game);
 void	free_tokens(char **tokens);
 void	free_resources(t_cub3d *game);
+int		is_within_bounds(t_cub3d *game, double x, double y);
 
 // GNL
 char	*recurs(int depth, int *ret, int fd);
