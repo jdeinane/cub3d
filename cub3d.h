@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 21:01:57 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:37:08 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@
 # define TEX_WIDTH 64
 # define TEX_HEIGHT 64
 # define NUM_TEXTURES 4
+
+# define KEY_ESC 65307
+# define KEY_W 'w'
+# define KEY_A 'a'
+# define KEY_S 's'
+# define KEY_D 'd'
+# define KEY_LEFT 65361
+# define KEY_RIGHT 65363
 
 typedef struct s_color {
 	int	r;
@@ -130,8 +138,10 @@ void	perform_dda(t_cub3d *game, t_ray *ray);
 void	perform_raycasting(t_cub3d *game);
 
 // UTILS
-void	error_exit(const char *msg);
+void	error_exit(t_cub3d *game, const char *msg);
+int		handle_exit(t_cub3d *game);
 void	free_tokens(char **tokens);
+void	free_resources(t_cub3d *game);
 
 // GNL
 char	*recurs(int depth, int *ret, int fd);

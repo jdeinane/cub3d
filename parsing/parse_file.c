@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:15:48 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/18 18:32:59 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:38:02 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	parse_file(t_cub3d *game, const char *filename)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		error_exit("Error opening file");
+		error_exit(game, "Error opening file");
 	while (get_next_line(fd, &line) > 0)
 	{
 		if (line[0] == 'N' && line [1] == 'O')

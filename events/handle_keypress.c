@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:57:42 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/18 17:15:00 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:40:30 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 int	handle_keypress(int keycode, t_cub3d *game)
 {
-	if (keycode == 65307)
-		exit(0);
-	if (keycode == 'w')
+	if (keycode == KEY_ESC)
+		clean_exit(game);
+	if (keycode == KEY_W)
 		game->keys.w = true;
-	if (keycode == 'a')
+	if (keycode == KEY_A)
 		game->keys.a = true;
-	if (keycode == 's')
+	if (keycode == KEY_S)
 		game->keys.s = true;
-	if (keycode == 'd')
+	if (keycode == KEY_D)
 		game->keys.d = true;
-	if (keycode == 65361)
+	if (keycode == KEY_LEFT)
 		game->keys.left = true;
-	if (keycode == 65363)
+	if (keycode == KEY_RIGHT)
 		game->keys.right = true;
 	return (0);
 }
 
 int	handle_exit(t_cub3d *game)
 {
-	exit(0);
+	clean_exit(game);
 	return (0);
 }

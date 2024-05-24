@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:10:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 21:18:47 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:37:34 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ static void	init_mlx(t_cub3d *game)
 {
 	game->mlx = mlx_init();
 	if (!game->mlx)
-		error_exit("Error initializing mlx");
+		error_exit(game, "Error initializing mlx");
 }
 
 static void	init_window(t_cub3d *game)
 {
 	game->win = mlx_new_window(game->mlx, WIN_WIDTH, WIN_HEIGHT, "Cub3D");
 	if (!game->win)
-		error_exit("Error creating window");
+		("Error creating window");
 }
 
 static void	init_text(t_cub3d *game)
@@ -51,11 +51,11 @@ void	init_game(t_cub3d *game)
 	init_window(game);
 	game->img = mlx_new_image(game->mlx, WIN_WIDTH, WIN_HEIGHT);
 	if (!game->img)
-		error_exit("Error creating image");
+		("Error creating image");
 	game->img_data = (int *)mlx_get_data_addr(game->img, &game->bpp, \
 					&game->size_line, &game->endian);
 	if (!game->img)
-		error_exit("Error getting image data");
+		error_exit(game, "Error getting image data");
 	game->win_width = WIN_WIDTH;
 	game->win_height = WIN_HEIGHT;
 	init_player(game);
