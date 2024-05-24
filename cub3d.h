@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 20:54:45 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:01:57 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ void	perform_raycasting(t_cub3d *game);
 
 // UTILS
 void	error_exit(const char *msg);
+void	free_tokens(char **tokens);
 
 // GNL
 char	*recurs(int depth, int *ret, int fd);

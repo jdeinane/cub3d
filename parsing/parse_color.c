@@ -6,24 +6,11 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:01:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 20:59:52 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:02:17 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-static void	free_tokens(char **tokens)
-{
-	int	i;
-
-	i = 0;
-	while (tokens[i])
-	{
-		free(tokens[i]);
-		i++;
-	}
-	free(tokens);
-}
 
 void	parse_color(t_color *color, char *line)
 {
@@ -33,7 +20,7 @@ void	parse_color(t_color *color, char *line)
 	tokens = ft_split(line + 2, ',');
 	if (!tokens[0] || !tokens[1] || !tokens[2])
 	{
-		free_tokens(tokens);
+		(tokens);
 		error_exit("Invalid color format");
 	}
 	color->r = ft_atoi(tokens[0]);

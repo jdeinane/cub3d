@@ -6,24 +6,11 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:30:14 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/18 18:00:28 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:02:59 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-static void	free_tokens(char **tokens)
-{
-	int	i;
-
-	i = 0;
-	while (tokens[i])
-	{
-		free(tokens[i]);
-		i++;
-	}
-	free(tokens);
-}
 
 static int	get_texture_index(char *id)
 {
@@ -33,8 +20,9 @@ static int	get_texture_index(char *id)
 		return (1);
 	else if (ft_strncmp(id, "WE", 2) == 0)
 		return (2);
-	else if (ft_strncmp(id, "SO", 2) == 0)
+	else if (ft_strncmp(id, "EA", 2) == 0)
 		return (3);
+	return (-1);
 }
 
 static void	load_texture(t_cub3d *game, char *path, int texture_index)
