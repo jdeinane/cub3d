@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 19:45:39 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 19:48:39 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 20:50:14 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ void	perform_dda(t_cub3d *game, t_ray *ray)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
+		if (ray->map_x < 0 || ray->map_x >= game->map_width
+			|| ray->map_y < 0 || ray->map_y >= game->map_height)
+			break ;
 		if (game->map[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;
 	}

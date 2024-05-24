@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 20:18:00 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 20:54:45 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,14 @@ int		handle_exit(t_cub3d *game);
 int		handle_keyrelease(int keycode, t_cub3d *game);
 
 // RAYCASTING
-
+void	init_ray(t_cub3d *game, t_ray *ray, int x);
+void	calc_step_and_side_dist(t_cub3d *game, t_ray *ray);
+void	calc_perp_wall_dist(t_cub3d *game, t_ray *ray);
+void	calc_line_height(t_cub3d *game, t_ray *ray);
+void	calc_all(t_cub3d *game, t_ray *ray);
+void	draw_line(t_cub3d *game, int x, t_ray *ray);
+void	perform_dda(t_cub3d *game, t_ray *ray);
+void	perform_raycasting(t_cub3d *game);
 
 // UTILS
 void	error_exit(const char *msg);
