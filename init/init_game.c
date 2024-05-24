@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:10:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/18 16:22:49 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 21:18:47 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,41 @@ static void	init_window(t_cub3d *game)
 		error_exit("Error creating window");
 }
 
-void	init_game(t_cub3d *game)
+static void	init_text(t_cub3d *game)
 {
 	int	i;
 
 	i = 0;
-	init_mlx(game);
-	init_window(game);
-	game->img = mlx_new_image(game->mlx, WIN_WIDTH, WIN_HEIGHT);
-	game->img_data = (int *)mlx_get_data_addr(game->img, &game->bpp, \
-					&game->size_line, &game->endian);
-	game->win_width = WIN_WIDTH;
-	game->win_height = WIN_HEIGHT;
-	init_player(game);
 	while (i < NUM_TEXTURES)
 	{
 		game->textures[i].img = NULL;
 		game->textures[i].data = NULL;
 		i++;
 	}
+}
+
+static void	init_colors(t_cub3d *game)
+{
 	game->floor_color = (t_color){0, 0, 0};
 	game->ceiling_color = (t_color){255, 255, 255};
+}
+
+void	init_game(t_cub3d *game)
+{
+	init_mlx(game);
+	init_window(game);
+	game->img = mlx_new_image(game->mlx, WIN_WIDTH, WIN_HEIGHT);
+	if (!game->img)
+		error_exit("Error creating image");
+	game->img_data = (int *)mlx_get_data_addr(game->img, &game->bpp, \
+					&game->size_line, &game->endian);
+	if (!game->img)
+		error_exit("Error getting image data");
+	game->win_width = WIN_WIDTH;
+	game->win_height = WIN_HEIGHT;
+	init_player(game);
+	init_text(game);
+	init_colors(game);
 	game->map = NULL;
 	game->map_width = 0;
 	game->map_height = 0;
