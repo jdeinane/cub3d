@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 21:37:08 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 22:10:54 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,15 @@ void	calc_all(t_cub3d *game, t_ray *ray);
 void	draw_line(t_cub3d *game, int x, t_ray *ray);
 void	perform_dda(t_cub3d *game, t_ray *ray);
 void	perform_raycasting(t_cub3d *game);
+
+// PLAYER
+void	rotate_left(t_cub3d *game, double rot_speed);
+void	rotate_right(t_cub3d *game, double rot_speed);
+void	move_forward(t_cub3d *game, double move_speed);
+void	move_backward(t_cub3d *game, double move_speed);
+void	move_left(t_cub3d *game, double move_speed);
+void	move_right(t_cub3d *game, double move_speed);
+void	update_player(t_cub3d *game);
 
 // UTILS
 void	error_exit(t_cub3d *game, const char *msg);
