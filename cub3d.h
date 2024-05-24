@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/19 16:29:43 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/24 20:18:00 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,9 @@ typedef struct s_ray {
 	int		step_y;
 	int		hit;
 	int		side;
+	int		line_height;
+	int		draw_start;
+	int		draw_end;
 }	t_ray;
 
 typedef struct s_cub3d {
@@ -115,6 +118,9 @@ void	parse_args(int ac, char **av);
 int		handle_keypress(int keycode, t_cub3d *game);
 int		handle_exit(t_cub3d *game);
 int		handle_keyrelease(int keycode, t_cub3d *game);
+
+// RAYCASTING
+
 
 // UTILS
 void	error_exit(const char *msg);
