@@ -6,39 +6,75 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 17:17:38 by jubaldo           #+#    #+#              #
-#    Updated: 2024/05/14 17:24:42 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/05/25 21:45:36 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	cub3d
 
-SRCS		=	
+SRCS		=	events/handle_keypress.c 	\
+				events/handle_keyrelease.c  \
+				get_next_line/get_next_line.c \
+				init/init_game.c \
+				init/init_player.c \
+				init/init_textures.c \
+				libft/ft_atoi.c \
+				libft/ft_memcpy.c \
+				libft/ft_memset.c \
+				libft/ft_realloc.c \
+				libft/ft_split.c \
+				libft/ft_strdup.c \
+				libft/ft_strlen.c \
+				libft/ft_strncmp.c \
+				libft/ft_strcmp.c \
+				parsing/parse_args.c \
+				parsing/parse_color.c \
+				parsing/parse_file.c \
+				parsing/parse_map.c \
+				parsing/parse_texture.c \
+				player/linear_moves.c \
+				player/rotation_moves.c \
+				player/update_player.c \
+				raycasting/calculations.c \
+				raycasting/draw.c \
+				raycasting/getters.c \
+				raycasting/init_ray.c \
+				raycasting/perform_dda.c \
+				raycasting/perform_raycasting.c \
+				utils/check.c \
+				utils/exit.c \
+				utils/free.c \
+				main.c
+
+OBJS_DIR	=	obj
+
+OBJS		=	$(addprefix $(OBJS_DIR)/, $(SRCS:.c=.o))
 
 CC			=	cc
 
 CFLAGS		=	-Wall -Wextra -Werror -g3
 
-LFLAGS		=	libmlx.a libmlx_Linux.a -lX11 -lXext
+LFLAGS		=	libmlx.a libmlx_Linux.a -lX11 -lXext -lm
 
 OBJS		=	$(SRCS:.c=.o)
 
 all:		$(NAME)
 
 $(NAME):	$(OBJS)
-			make -C minilibx-linux/ && mv minilibx-linux/libmlx.a . && mv minilibx-linux/libmlx_Linux.a .
+			make -C minilibx/ && mv minilibx/libmlx.a . && mv minilibx/libmlx_Linux.a .
 			$(CC) -o $(NAME) $(OBJS) $(LFLAGS)
-			@echo "\033[32m ~~ cub3d successfully created! ~~"
+			@echo "\033[32m ~~ ./cub3d successfully created! ~~"
 			@echo "$$BIBOU"
 
 clean:
-			make clean -C minilibx-linux/
+			make clean -C minilibx/
 			rm -rf $(OBJS)
-			@echo "\033[31m ~~ cub3d successfully deleted! ~~"
+			@echo "\033[31m ~~ ./cub3d successfully deleted! ~~"
 			@echo "$$PQ"
-
+				
 fclean:		clean
 			rm -rf $(NAME) libmlx.a libmlx_Linux.a
-			@echo "\033[31m ~~ cub3d successfully fdeleted! ~~"
+			@echo "\033[31m ~~ ./cub3d successfully fdeleted! ~~"
 			@echo "$$PQ"
 
 re:			fclean all

@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:57:42 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 21:40:30 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 21:40:33 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,5 @@ int	handle_keypress(int keycode, t_cub3d *game)
 		game->keys.left = true;
 	if (keycode == KEY_RIGHT)
 		game->keys.right = true;
-	return (0);
-}
-
-int	handle_exit(t_cub3d *game)
-{
-	clean_exit(game);
 	return (0);
 }

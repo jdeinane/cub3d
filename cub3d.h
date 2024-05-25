@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 21:04:08 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 21:39:13 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,6 @@ void	parse_args(int ac, char **av);
 
 // EVENTS
 int		handle_keypress(int keycode, t_cub3d *game);
-int		handle_exit(t_cub3d *game);
 int		handle_keyrelease(int keycode, t_cub3d *game);
 
 // RAYCASTING
@@ -170,6 +169,7 @@ void	update_player(t_cub3d *game);
 // UTILS
 void	error_exit(t_cub3d *game, const char *msg);
 int		handle_exit(t_cub3d *game);
+void	clean_exit(t_cub3d *game);
 void	free_tokens(char **tokens);
 void	free_resources(t_cub3d *game);
 int		is_within_bounds(t_cub3d *game, double x, double y);
@@ -187,5 +187,6 @@ int		ft_atoi(const char *str);
 void	*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 char	*ft_strdup(const char *s);
 size_t	ft_strlen(char const *s);
+int		ft_strcmp(char *s1, char *s2);
 
 #endif
