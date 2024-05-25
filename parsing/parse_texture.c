@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:30:14 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 21:38:20 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 22:27:10 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	load_texture(t_cub3d *game, char *path, int texture_index)
 					&game->textures[texture_index].width, \
 					&game->textures[texture_index].height);
 	if (!game->textures[texture_index].img)
-		error_exit(game, "Failed to load texture");
+		error_exit(game, "Error: Failed to load texture");
 	game->textures[texture_index].data = (int *)mlx_get_data_addr \
 					(game->textures[texture_index].img, \
 					&game->textures[texture_index].bpp, \
@@ -48,13 +48,13 @@ void	parse_textures(t_cub3d *game, char *line)
 	if (!tokens || !tokens[1])
 	{
 		free_tokens(tokens);
-		error_exit(game, "Invalid texture path");
+		error_exit(game, "Error: Invalid texture path");
 	}
 	texture_index = get_texture_index(tokens[0]);
 	if (texture_index == -1)
 	{
 		free_tokens(tokens);
-		error_exit(game, "Unknown texture identifier");
+		error_exit(game, "Error: Unknown texture identifier");
 	}
 	load_texture(game, tokens[1], texture_index);
 	free_tokens(tokens);
