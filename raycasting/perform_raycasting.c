@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 20:33:06 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 20:35:52 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 21:12:42 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	perform_raycasting(t_cub3d *game)
 		init_ray(game, &ray, x);
 		calc_step_and_side_dist(game, &ray);
 		perform_dda(game, &ray);
-		calc_all(game, &ray, x);
+		calc_all(game, &ray);
 		draw_line(game, x, &ray);
 		x++;
 	}
