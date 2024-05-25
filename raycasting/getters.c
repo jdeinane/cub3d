@@ -6,12 +6,11 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 20:02:18 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 20:06:35 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 20:43:52 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
 
 int	get_line_height(t_ray *ray, int win_height)
 {
@@ -41,6 +40,7 @@ int	get_draw_end(int line_height, int win_height)
 double	get_wall_x(t_ray *ray, t_player *player)
 {
 	double	wall_x;
+
 	if (ray->side == 0)
 		wall_x = player->pos_y + ray->perp_wall_dist * ray->ray_dir_y;
 	else

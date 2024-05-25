@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 22:20:30 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 21:04:08 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,15 @@ typedef struct s_ray {
 	int		draw_end;
 }	t_ray;
 
+typedef struct s_draw_params
+{
+	int		draw_start;
+	int		draw_end;
+	int		texture_x;
+	double	texture_pos;
+	double	step;
+}	t_draw_params;
+
 typedef struct s_cub3d {
 	void		*mlx;
 	void		*win;
@@ -136,6 +145,18 @@ void	calc_all(t_cub3d *game, t_ray *ray);
 void	draw_line(t_cub3d *game, int x, t_ray *ray);
 void	perform_dda(t_cub3d *game, t_ray *ray);
 void	perform_raycasting(t_cub3d *game);
+
+// DRAW
+int		get_line_height(t_ray *ray, int win_height);
+int		get_draw_start(int line_height, int win_height);
+int		get_draw_end(int line_height, int win_height);
+double	get_wall_x(t_ray *ray, t_player *player);
+int		get_texture_x(t_ray *ray, double wall_x);
+void	init_draw_params(t_draw_params *params, t_cub3d *game, \
+							t_ray *ray, int line_height);
+void	draw_text_line(t_cub3d *game, int x, t_ray *ray, t_draw_params *params);
+void	draw_line(t_cub3d *game, int x, t_ray *ray);
+void	draw_floor_and_ceiling(t_cub3d *game);
 
 // PLAYER
 void	rotate_left(t_cub3d *game, double rot_speed);
