@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 21:39:13 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 22:06:59 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ typedef struct s_cub3d {
 void	init_game(t_cub3d *game);
 void	init_player(t_cub3d *game);
 void	init_textures(t_cub3d *game);
+void	init_cub3d(t_cub3d *game);
 
 // PARSING
 void	parse_file(t_cub3d *game, const char *filename);

@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 18:18:57 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 21:34:27 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 22:20:19 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ static int	has_cub_extension(char *filename)
 
 void	parse_args(int ac, char **av)
 {
-	t_cub3d	game;
-
 	if (ac != 2)
-		error_exit(&game, "Wrong arguments");
+		error_exit(NULL, "Wrong arguments");
 	if (!has_cub_extension(av[1]))
-		error_exit(&game, "Error: Map must have a .cub extension");
+		error_exit(NULL, "Error: Map must have a .cub extension");
 }

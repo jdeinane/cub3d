@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 19:16:22 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 21:12:20 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/25 22:08:59 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int ac, char **av)
 {
 	t_cub3d	game;
 
+	init_cub3d(&game);
 	parse_args(ac, av);
 	init_game(&game);
 	parse_file(&game, av[1]);
