@@ -6,13 +6,13 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:10:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/27 17:35:28 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:36:17 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static void	init_mlx(t_cub3d *game)
+void	init_mlx(t_cub3d *game)
 {
 	game->mlx = mlx_init();
 	if (!game->mlx)

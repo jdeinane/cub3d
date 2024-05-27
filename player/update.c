@@ -1,16 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_player.c                                    :+:      :+:    :+:   */
+/*   update.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/24 21:55:09 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/24 22:12:14 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 18:16:30 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+void	update_position(t_cub3d *game, double new_x, double new_y)
+{
+	if (is_within_bounds(game, new_x, game->player.pos_y) && \
+			game->map[(int)game->player.pos_y][(int)new_x == '0'])
+		game->player.pos_x = new_x;
+	if (is_within_bounds(game, game->player.pos_x, new_y) && \
+			game->map[(int)new_y][(int)game->player.pos_x == '0'])
+		game->player.pos_x = new_y;
+}
 
 void	update_player(t_cub3d *game)
 {

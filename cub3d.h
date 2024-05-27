@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/27 17:28:29 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 18:21:07 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
 
-# define PATH_NORTH "./path_to_north_texture.xpm"
-# define PATH_SOUTH "./path_to_south_texture.xpm"
-# define PATH_EAST "./path_to_east_texture.xpm"
-# define PATH_WEST "./path_to_west_texture.xpm"
+# define PATH_NORTH "./textures/north_texture.xpm"
+# define PATH_SOUTH "./textures/south_texture.xpm"
+# define PATH_EAST "./textures/east_texture.xpm"
+# define PATH_WEST "./textures/west_texture.xpm"
 
 typedef struct s_color {
 	int	r;
@@ -128,6 +128,7 @@ typedef struct s_cub3d {
 void	init_game(t_cub3d *game);
 void	init_player(t_cub3d *game);
 void	init_cub3d(t_cub3d *game);
+void	init_mlx(t_cub3d *game);
 
 // PARSING
 void	parse_file(t_cub3d *game, const char *filename);
@@ -170,6 +171,7 @@ void	move_backward(t_cub3d *game, double move_speed);
 void	move_left(t_cub3d *game, double move_speed);
 void	move_right(t_cub3d *game, double move_speed);
 void	update_player(t_cub3d *game);
+void	update_position(t_cub3d *game, double new_x, double new_y);
 
 // UTILS
 void	error_exit(t_cub3d *game, const char *msg);
@@ -178,6 +180,8 @@ void	clean_exit(t_cub3d *game);
 void	free_tokens(char **tokens);
 void	free_resources(t_cub3d *game);
 int		is_within_bounds(t_cub3d *game, double x, double y);
+int		is_space(int c);
+int		is_map_line(char *line);
 
 // GNL
 char	*recurs(int depth, int *ret, int fd);

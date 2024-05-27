@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/25 22:05:24 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/27 17:35:09 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:36:35 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,6 @@ static void	init_colors(t_cub3d *game)
 {
 	game->floor_color = (t_color){0, 0, 0};
 	game->ceiling_color = (t_color){255, 255, 255};
-}
-
-static void	init_mlx(t_cub3d *game)
-{
-	game->mlx = mlx_init();
-	if (!game->mlx)
-		error_exit(game, "Error: Error initializing mlx");
 }
 
 void	init_cub3d(t_cub3d *game)
