@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 16:10:23 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 22:26:00 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:35:28 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	init_game(t_cub3d *game)
 		error_exit(game, "Error: Error creating image");
 	game->img_data = (int *)mlx_get_data_addr(game->img, &game->bpp, \
 					&game->size_line, &game->endian);
-	if (!game->img)
+	if (!game->img_data)
 		error_exit(game, "Error: Error getting image data");
 	init_player(game);
 }

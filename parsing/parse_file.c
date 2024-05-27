@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/18 17:15:48 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 22:26:44 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:15:33 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,4 @@ void	parse_file(t_cub3d *game, const char *filename)
 		free(line);
 	}
 	close(fd);
-	init_textures(game);
 }

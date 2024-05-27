@@ -6,7 +6,7 @@
 #    By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 17:17:38 by jubaldo           #+#    #+#              #
-#    Updated: 2024/05/25 22:07:12 by jubaldo          ###   ########.fr        #
+#    Updated: 2024/05/27 17:15:28 by jubaldo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,6 @@ SRCS		=	events/handle_keypress.c 	\
 				get_next_line/get_next_line.c \
 				init/init_game.c \
 				init/init_player.c \
-				init/init_textures.c \
 				init/init_cub3d.c \
 				libft/ft_atoi.c \
 				libft/ft_memcpy.c \

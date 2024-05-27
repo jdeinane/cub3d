@@ -6,7 +6,7 @@
 /*   By: jubaldo <jubaldo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 17:17:11 by jubaldo           #+#    #+#             */
-/*   Updated: 2024/05/25 23:08:01 by jubaldo          ###   ########.fr       */
+/*   Updated: 2024/05/27 17:28:29 by jubaldo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@
 # define KEY_D 'd'
 # define KEY_LEFT 65361
 # define KEY_RIGHT 65363
+
+# define PATH_NORTH "./path_to_north_texture.xpm"
+# define PATH_SOUTH "./path_to_south_texture.xpm"
+# define PATH_EAST "./path_to_east_texture.xpm"
+# define PATH_WEST "./path_to_west_texture.xpm"
 
 typedef struct s_color {
 	int	r;
@@ -122,7 +127,6 @@ typedef struct s_cub3d {
 // INIT
 void	init_game(t_cub3d *game);
 void	init_player(t_cub3d *game);
-void	init_textures(t_cub3d *game);
 void	init_cub3d(t_cub3d *game);
 
 // PARSING
